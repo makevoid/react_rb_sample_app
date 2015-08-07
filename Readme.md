@@ -1,6 +1,8 @@
-# Opal Raw
+# React rb sample app
 
-A very fast opal setup - includes opal browser - uses guard to automatically compile your .js.ruby files as you save them - has opal and opal-browser vendored already in js files.
+https://github.com/zetachang/react.rb#reactcomponent
+
+A very fast opal setup - includes opal browser and react.rb - uses guard to automatically compile your .js.ruby files as you save them - has opal, opal-browser, react and react.rb vendored already in js files.
 
 Open the project in a webserver:
 

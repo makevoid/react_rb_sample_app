@@ -27,20 +27,4 @@ launch guard:
 
 
 modify app.rb, save and refresh the browser
-
----
-
-#### extra infos:
-
-build a stdlib module
-
-    File.open("math.js", 'w') { |file| file.write(Opal::Builder.build('math')) }
-
-all stdlib modules:
-
-https://github.com/opal/opal/tree/master/stdlib
-
-useful stdlib modules:
-
-- nodejs (file, dir, kernel, io ...)
-- js (instanceof, typeof, call ...)
+(or add guard-livereload that refreshes the browser so you don't have to)

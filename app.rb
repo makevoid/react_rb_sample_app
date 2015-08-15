@@ -27,15 +27,21 @@ class TickTock
   include SetInterval
 
   define_state(:seconds) { 0 }
+  define_state(:tac) { false }
 
   before_mount do
     set_interval(1) { self.seconds = self.seconds + 1 }
-    set_interval(1) { puts "Tick!" }
+    set_interval(1) {  self.tac = !self.tac  }
   end
 
   def render
-    span do
-      "React has been running for: #{self.seconds}"
+    div do
+      div do
+        "React has been running for: #{self.seconds}"
+      end
+      div do
+        "#{(self.tac ? "Tac!" : "Tick!")}"
+      end
     end
   end
 end
@@ -43,12 +49,12 @@ end
 React.render(React.create_element(TickTock), $document.body.to_n)
 
 
-after = 5
-
-unmount_component = lambda do
-  React.unmount_component_at_node($document.body.to_n)
-end
-`#{WINDOW}.setTimeout(#{unmount_component.to_n}, #{after} * 1000)`
+# after = 5
+#
+# unmount_component = lambda do
+#   React.unmount_component_at_node($document.body.to_n)
+# end
+# `#{WINDOW}.setTimeout(#{unmount_component.to_n}, #{after} * 1000)`
 
 
 
